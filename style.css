@@ -1,0 +1,135 @@
+:root{
+  --bg:#f3efe9;
+  --panel:#efe7dd;
+  --accent:#8b5e3c;
+  --muted:#6b5847;
+  --card:#fffaf6;
+  --radius:16px;
+  --maxw:1000px;
+  --pad:22px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--bg),#efeae3);color:var(--muted);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--maxw);margin:28px auto;padding:24px}
+
+/* Cover */
+.cover{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:center;background:linear-gradient(180deg,var(--panel),rgba(255,255,255,0.6));border-radius:var(--radius);padding:var(--pad)}
+.cover .title{padding:24px}
+.cover h1{font-family:'Georgia',serif;margin:0;font-size:36px;color:var(--accent);letter-spacing:0.6px}
+.cover p{margin:8px 0 0;font-size:15px}
+.cover .cover-img{height:220px;background-size:cover;background-position:center;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+
+/* Menu / Intro */
+/* === Menu + Intro Layout === */
+.menu-intro {
+  display: grid;
+  grid-template-columns: 1fr 300px; /* left = intro, right = menu */
+  gap: 24px;
+  margin-top: 30px;
+  align-items: start;
+}
+
+/* === Menu Box === */
+.menu {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(139, 94, 60, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.menu h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(139,94,60,0.15);
+  padding-bottom: 6px;
+}
+
+.toc {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+
+.toc li {
+  border-bottom: 1px dashed rgba(107,88,71,0.08);
+}
+
+.toc li a {
+  display: block;
+  padding: 8px 4px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.toc li a:hover {
+  background: rgba(139,94,60,0.08);
+  color: var(--accent);
+  padding-left: 10px;
+}
+
+/* === Intro Box === */
+.intro {
+  background: var(--card);
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid rgba(139,94,60,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.intro h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.intro img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 14px;
+}
+
+
+/* Recipe grid */
+.recipes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.recipe{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(107,88,71,0.05);display:flex;flex-direction:column;gap:12px;cursor:pointer;transition:transform .2s;text-decoration:none;color:inherit}
+.recipe:hover{transform:translateY(-4px)}
+.recipe h3{margin:0;color:var(--accent);font-size:18px}
+.meta{font-size:13px;color:rgba(107,88,71,0.8)}
+.thumb{height: 300px;background:#eee;border-radius:10px;background-size:cover;background-position:center}
+
+/* Recipe Page */
+.recipe-page h1{color:var(--accent);margin-top:0}
+.recipe-img {float: right;width:20%;height: 200px;border-radius: 12px;margin: 0 0 15px 20px; margin-right:80px;}
+.recipe-page ul{margin:0 0 16px 20px}
+.recipe-page p{line-height:1.6}
+
+/* Responsive */
+@media (max-width:900px){
+  .cover{grid-template-columns:1fr 1fr}
+  .menu-intro{grid-template-columns:1fr}
+  .recipes{grid-template-columns:repeat(2,1fr)}
+  .cover .cover-img{height:180px}
+}
+@media (max-width:620px){
+  .cover{grid-template-columns:1fr}
+  .recipes{grid-template-columns:1fr}
+}
+@media (max-width: 768px) {
+  .recipe-img {
+    float: none;
+    display: block;
+    margin: 0 auto 15px auto; /* center align */
+    max-width: 90%;
+  }
+}
+
+
